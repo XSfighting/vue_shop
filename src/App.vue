@@ -1,8 +1,17 @@
 <template>
   <div id="app">
-我是根组件
+    <router-view />
   </div>
 </template>
+
+<script>
+
+export default {
+  name: 'app',
+  components: {
+  }
+}
+</script>
 
 <style>
 
