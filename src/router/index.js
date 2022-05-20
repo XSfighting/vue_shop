@@ -6,35 +6,44 @@ import Welcome from "@/components/Welcome";
 import Users from "@/components/user/Users";
 import Rights from "@/components/power/Rights";
 import Roles from "@/components/power/Roles";
+import List from "@/components/goods/List";
+import Cate from "@/components/goods/Cate";
+import Params from "@/components/goods/Params";
+import Add from "@/components/goods/Add";
 
 Vue.use(VueRouter)
 
 const routes = [
-  {path: '/', redirect: '/login'},
-  {path: '/login', component: Login},
-  {
-    path: '/home',
-    component: Home,
-    redirect: '/welcome',
-    children: [
-        {path: '/welcome', component: Welcome},
-        {path: '/users', component: Users},
-        {path: '/rights', component: Rights},
-        {path: '/roles', component: Roles}
-    ]
-  }
+    {path: '/', redirect: '/login'},
+    {path: '/login', component: Login},
+    {
+        path: '/home',
+        component: Home,
+        redirect: '/welcome',
+        children: [
+            {path: '/welcome', component: Welcome},
+            {path: '/users', component: Users},
+            {path: '/rights', component: Rights},
+            {path: '/roles', component: Roles},
+            {path: '/categories', component: Cate},
+            {path: '/params', component: Params},
+            {path: '/goods', component: List},
+            {path:'/goods/add', component: Add}
+
+        ]
+    }
 ]
 
 const router = new VueRouter({
-  routes,
-  mode: 'history'
+    routes,
+    mode: 'history'
 })
 // 挂载路由导航守卫
 router.beforeEach ((to,from,next) => {
-  if (to.path === '/login') return next();
-  const tokenStr = window.sessionStorage.getItem('token')
-  if (!tokenStr) return next('/login');
-  next()
+    if (to.path === '/login') return next();
+    const tokenStr = window.sessionStorage.getItem('token')
+    if (!tokenStr) return next('/login');
+    next()
 
 })
 

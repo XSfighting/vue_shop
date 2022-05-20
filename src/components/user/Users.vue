@@ -37,14 +37,16 @@
       <el-table-column label="操作" width="180px">
         <template v-slot="scope">
           <el-tooltip  effect="dark" content="编辑" placement="top" :enterable="false">
-            <el-button type="primary" icon="el-icon-edit" size="mini" @click="showEditDialog(scope.row.id)"></el-button>
+            <el-button type="primary" icon="el-icon-edit" size="mini"
+                       @click="showEditDialog(scope.row.id)"></el-button>
           </el-tooltip>
           <el-tooltip  effect="dark" content="删除" placement="top" :enterable="false">
             <el-button type="danger" icon="el-icon-delete" size="mini"
                        @click="removeUserById(scope.row.id)"></el-button>
           </el-tooltip>
           <el-tooltip  effect="dark" content="分配角色" placement="top" :enterable="false">
-            <el-button type="warning" icon="el-icon-setting" size="mini" @click="setRole(scope.row)"></el-button>
+            <el-button type="warning" icon="el-icon-setting" size="mini"
+                       @click="setRole(scope.row)"></el-button>
           </el-tooltip>
         </template>
       </el-table-column>
@@ -193,7 +195,7 @@ export default {
           {validator: checkMobile, trigger: 'blur'}
         ]
       },
-      editForm: {},
+      editForm: [],
       editFormRules: {
         username: [
           {required: true, message: '请输入用户名', trigger: 'blur'},
