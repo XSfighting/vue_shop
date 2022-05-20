@@ -48,8 +48,8 @@
       <el-table-column label="角色描述" prop="roleDesc"></el-table-column>
       <el-table-column label="操作" width="300px">
         <template v-slot="scope">
-          <el-button type="primary" icon="el-icon-edit" size="mini" @click="editRolesVisible = true">编辑</el-button>
-          <el-button type="danger" icon="el-icon-delete" size="mini" @click="removeUserById(scope.row.roleId)">删除</el-button>
+          <el-button type="primary" icon="el-icon-edit" size="mini" @click="showEditVisible(scope.row.id)">编辑</el-button>
+          <el-button type="danger" icon="el-icon-delete" size="mini" @click="removeRolesById(scope.row.id)">删除</el-button>
           <el-button type="warning" icon="el-icon-setting" size="mini" @click="showSetRightDialogue(scope.row)">分配权限</el-button>
         </template>
       </el-table-column>
@@ -73,7 +73,7 @@
   </span>
   </el-dialog>
 <!--修改角色对话框-->
-  <el-dialog title="修改角色" :visible.sync="editRolesVisible" width="35%"  @close="editRolesClosed">
+  <el-dialog title="修改角色" :visible.sync="editRolesVisible" width="50%"  @close="editRolesClosed">
     <!--    内容主体区-->
     <el-form :model="editRoles" :rules="editRolesRules" ref="editRolesRef" label-width="80px">
       <el-form-item label="角色名称" prop="roleName">
@@ -116,8 +116,9 @@ export default {
     return {
       rolesList: [],
       rightsList: [],
-      addRoles: {},
       addRolesVisible: false,
+      addRoles: {},
+      editRolesVisible: false,
       editRoles: {},
       editRolesRules: {
         roleName: [
@@ -129,7 +130,6 @@ export default {
           {min: 5, max: 20, message: '角色描述的长度在5~20个字符之间', trigger: 'blur'}
         ]
       },
-      editRolesVisible: false,
       setRightDialogVisible: false,
       treeProps: {
         children: 'children',
@@ -173,6 +173,15 @@ export default {
     setRightDialogClosed() {
      this.defKeys = []
     },
+    async showEditVisible(id) {
+      const {data:res} = await this.$http.get('roles/'+id)
+      if (res.meta.status !== 200) return this.$message.error('查询用户角色失败!')
+      this.$message.success('查询用户角色成功！')
+      console.log(res);
+      this.editRoles = res.data
+      console.log(this.editRoles);
+      this.editRolesVisible = true
+    },
     editRolesInfo() {
      this.$refs.editRolesRef.validate(async valid=> {
        if (!valid) return
@@ -187,7 +196,7 @@ export default {
        this.getRolesList()
      })
     },
-    async removeUserById(id) {
+    async removeRolesById(id) {
       const confirmResult = await this.$confirm('此操作将永久删除该角色, 是否继续?', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
@@ -196,7 +205,7 @@ export default {
       if (confirmResult !== 'confirm') {
         return this.$message.info('已取消删除')
       }
-      const {data: res} = await this.$http.delete('users/' + id)
+      const {data: res} = await this.$http.delete('roles/' + id)
       if (res.meta.status !== 200) return this.$message.error('删除用户失败！')
       this.$message.success('删除角色成功！')
       this.getRolesList()

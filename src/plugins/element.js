@@ -30,7 +30,14 @@ import {
     Tree,
     Select,
     Option,
+<<<<<<< HEAD
     Cascader
+=======
+    Alert,
+    Cascader,
+    Tabs,
+    TabPane
+>>>>>>> goods_params
 } from 'element-ui'
 
 Vue.use(Form)
@@ -59,7 +66,14 @@ Vue.use(Tag)
 Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
+<<<<<<< HEAD
 Vue.use(Cascader)
+=======
+Vue.use(Alert)
+Vue.use(Cascader)
+Vue.use(Tabs)
+Vue.use(TabPane)
+>>>>>>> goods_params
 
 // $message是自定义属性，可以任意改名字，只要合法就行
 Vue.prototype.$message = Message
