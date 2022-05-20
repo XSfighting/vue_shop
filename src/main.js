@@ -7,9 +7,6 @@ import './plugins/element.js'
 import './assets/css/global.css'
 import './assets/fonts/iconfont.css'
 import TreeTable from 'vue-table-with-tree-grid'
-<<<<<<< HEAD
-
-=======
 // 导入富文本编辑器
 import VueQuillEditor from "vue-quill-editor";
 
@@ -17,21 +14,17 @@ import VueQuillEditor from "vue-quill-editor";
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
->>>>>>> list
 
 axios.defaults.baseURL = 'https://lianghj.top:8888/api/private/v1'
 axios.interceptors.request.use(config=> {
+  // console.log(config)
   config.headers.Authorization = window.sessionStorage.getItem('token')
   // 在最后必须return config
   return config
 })
 Vue.prototype.$http = axios
 
-<<<<<<< HEAD
-Vue.component('tree-table',TreeTable)
-=======
 Vue.component('tree-table', TreeTable)
->>>>>>> list
 
 Vue.config.productionTip = false
 // 将富文本编辑器注册为全局可用的组件
@@ -47,8 +40,6 @@ Vue.filter('dateFormat',function (originVal) {
   const ss =( dt.getSeconds() + '').padStart(2,'0')
   return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
 })
-
-Vue.component('tree-table',TreeTable)
 
 new Vue({
   router,

@@ -30,16 +30,6 @@ import {
     Tree,
     Select,
     Option,
-<<<<<<< HEAD
-<<<<<<< HEAD
-    Cascader
-=======
-    Alert,
-    Cascader,
-    Tabs,
-    TabPane
->>>>>>> goods_params
-=======
     Cascader,
     Alert,
     Tabs,
@@ -48,8 +38,10 @@ import {
     Step,
     CheckboxGroup,
     Upload
->>>>>>> list
 } from 'element-ui'
+
+import {Timeline} from "element-ui";
+import {TimelineItem} from "element-ui";
 
 Vue.use(Form)
 Vue.use(FormItem)
@@ -77,16 +69,6 @@ Vue.use(Tag)
 Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
-<<<<<<< HEAD
-<<<<<<< HEAD
-Vue.use(Cascader)
-=======
-Vue.use(Alert)
-Vue.use(Cascader)
-Vue.use(Tabs)
-Vue.use(TabPane)
->>>>>>> goods_params
-=======
 Vue.use(Cascader)
 Vue.use(Alert)
 Vue.use(Tabs)
@@ -95,7 +77,8 @@ Vue.use(Steps)
 Vue.use(Step)
 Vue.use(CheckboxGroup)
 Vue.use(Upload)
->>>>>>> list
+Vue.use(Timeline)
+Vue.use(TimelineItem)
 
 // $message是自定义属性，可以任意改名字，只要合法就行
 Vue.prototype.$message = Message

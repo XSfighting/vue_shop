@@ -6,7 +6,7 @@
     <el-breadcrumb-item>商品管理</el-breadcrumb-item>
     <el-breadcrumb-item>添加商品</el-breadcrumb-item>
   </el-breadcrumb>
-<!--  卡片实体区域-->
+<!--  卡片视图区域-->
   <el-card>
 <!--    提示区域-->
     <el-alert show-icon title="添加商品信息" center type="info" :closable="false"></el-alert>

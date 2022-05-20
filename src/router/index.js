@@ -9,32 +9,13 @@ import Roles from "@/components/power/Roles";
 import List from "@/components/goods/List";
 import Cate from "@/components/goods/Cate";
 import Params from "@/components/goods/Params";
-<<<<<<< HEAD
-=======
 import Add from "@/components/goods/Add";
->>>>>>> list
+import Order from "@/components/order/Order";
+import Report from "@/components/report/Report";
 
 Vue.use(VueRouter)
 
 const routes = [
-<<<<<<< HEAD
-  {path: '/', redirect: '/login'},
-  {path: '/login', component: Login},
-  {
-    path: '/home',
-    component: Home,
-    redirect: '/welcome',
-    children: [
-        {path: '/welcome', component: Welcome},
-        {path: '/users', component: Users},
-        {path: '/rights', component: Rights},
-        {path: '/roles', component: Roles},
-        {path: '/goods', component: List},
-        {path: '/categories', component: Cate},
-        {path: '/params', component: Params},
-    ]
-  }
-=======
     {path: '/', redirect: '/login'},
     {path: '/login', component: Login},
     {
@@ -49,11 +30,12 @@ const routes = [
             {path: '/categories', component: Cate},
             {path: '/params', component: Params},
             {path: '/goods', component: List},
-            {path:'/goods/add', component: Add}
+            {path: '/goods/add', component: Add},
+            {path:'/orders', component: Order},
+            {path:'/reports', component: Report},
 
         ]
     }
->>>>>>> list
 ]
 
 const router = new VueRouter({
