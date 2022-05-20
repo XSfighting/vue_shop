@@ -17,11 +17,8 @@ axios.interceptors.request.use(config=> {
 })
 Vue.prototype.$http = axios
 
-<<<<<<< HEAD
-=======
 Vue.component('tree-table',TreeTable)
 
->>>>>>> goods_params
 Vue.config.productionTip = false
 
 Vue.component('tree-table',TreeTable)
