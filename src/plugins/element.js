@@ -29,7 +29,11 @@ import {
     Tag,
     Tree,
     Select,
-    Option
+    Option,
+    Alert,
+    Cascader,
+    Tabs,
+    TabPane
 } from 'element-ui'
 
 Vue.use(Form)
@@ -58,6 +62,10 @@ Vue.use(Tag)
 Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
+Vue.use(Alert)
+Vue.use(Cascader)
+Vue.use(Tabs)
+Vue.use(TabPane)
 
 // $message是自定义属性，可以任意改名字，只要合法就行
 Vue.prototype.$message = Message
