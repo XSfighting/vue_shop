@@ -31,6 +31,7 @@ import {
     Select,
     Option,
 <<<<<<< HEAD
+<<<<<<< HEAD
     Cascader
 =======
     Alert,
@@ -38,6 +39,16 @@ import {
     Tabs,
     TabPane
 >>>>>>> goods_params
+=======
+    Cascader,
+    Alert,
+    Tabs,
+    TabPane,
+    Steps,
+    Step,
+    CheckboxGroup,
+    Upload
+>>>>>>> list
 } from 'element-ui'
 
 Vue.use(Form)
@@ -67,6 +78,7 @@ Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
 <<<<<<< HEAD
+<<<<<<< HEAD
 Vue.use(Cascader)
 =======
 Vue.use(Alert)
@@ -74,6 +86,16 @@ Vue.use(Cascader)
 Vue.use(Tabs)
 Vue.use(TabPane)
 >>>>>>> goods_params
+=======
+Vue.use(Cascader)
+Vue.use(Alert)
+Vue.use(Tabs)
+Vue.use(TabPane)
+Vue.use(Steps)
+Vue.use(Step)
+Vue.use(CheckboxGroup)
+Vue.use(Upload)
+>>>>>>> list
 
 // $message是自定义属性，可以任意改名字，只要合法就行
 Vue.prototype.$message = Message

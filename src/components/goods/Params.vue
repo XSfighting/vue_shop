@@ -12,9 +12,13 @@
       <!-- 警告区域 -->
       <el-alert show-icon title="注意：只允许为第三级分类设置相关参数！" type="warning" :closable="false"></el-alert>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> goods_params
+=======
+
+>>>>>>> list
       <!-- 选择商品分类区域 -->
       <el-row class="cat_opt">
         <el-col>
@@ -28,6 +32,9 @@
       <!-- tab 页签区域 -->
       <el-tabs v-model="activeName" @tab-click="handleTabClick">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> list
         <!-- 添加动态参数的面板 -->
         <el-tab-pane label="动态参数" name="many">
           <!-- 添加参数的按钮 -->
@@ -47,6 +54,7 @@
               </template>
             </el-table-column>
             <!-- 索引列 -->
+<<<<<<< HEAD
 =======
 <!--        添加动态参数的面板-->
         <el-tab-pane label="动态参数" name="many">
@@ -73,10 +81,13 @@
 
             <!--            索引列-->
 >>>>>>> goods_params
+=======
+>>>>>>> list
             <el-table-column type="index"></el-table-column>
             <el-table-column label="参数名称" prop="attr_name"></el-table-column>
             <el-table-column label="操作">
               <template slot-scope="scope">
+<<<<<<< HEAD
 <<<<<<< HEAD
                 <el-button size="mini" type="primary" icon="el-icon-edit" @click="showEditDialog(scope.row.attr_id)">编辑</el-button>
                 <el-button size="mini" type="danger" icon="el-icon-delete" @click="removeParams(scope.row.attr_id)">删除</el-button>
@@ -84,11 +95,18 @@
                 <el-button type="primary" icon="el-icon-edit" size="mini" @click="showEditDialog(scope.row.attr_id)">编辑</el-button>
                 <el-button type="danger" icon="el-icon-delete" size="mini" @click="removeParams(scope.row.attr_id)">删除</el-button>
 >>>>>>> goods_params
+=======
+                <el-button size="mini" type="primary" icon="el-icon-edit" @click="showEditDialog(scope.row.attr_id)">编辑</el-button>
+                <el-button size="mini" type="danger" icon="el-icon-delete" @click="removeParams(scope.row.attr_id)">删除</el-button>
+>>>>>>> list
               </template>
             </el-table-column>
           </el-table>
         </el-tab-pane>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> list
         <!-- 添加静态属性的面板 -->
         <el-tab-pane label="静态属性" name="only">
           <!-- 添加属性的按钮 -->
@@ -108,6 +126,7 @@
               </template>
             </el-table-column>
             <!-- 索引列 -->
+<<<<<<< HEAD
 =======
         <el-tab-pane label="静态属性" name="only">
           <el-button type="primary" size="mini" :disabled="isBtnDisabled" @click="addDialogVisible = true">添加属性</el-button>
@@ -133,10 +152,13 @@
 
             <!--            索引列-->
 >>>>>>> goods_params
+=======
+>>>>>>> list
             <el-table-column type="index"></el-table-column>
             <el-table-column label="属性名称" prop="attr_name"></el-table-column>
             <el-table-column label="操作">
               <template slot-scope="scope">
+<<<<<<< HEAD
 <<<<<<< HEAD
                 <el-button size="mini" type="primary" icon="el-icon-edit" @click="showEditDialog(scope.row.attr_id)">编辑</el-button>
                 <el-button size="mini" type="danger" icon="el-icon-delete" @click="removeParams(scope.row.attr_id)">删除</el-button>
@@ -144,6 +166,10 @@
                 <el-button type="primary" icon="el-icon-edit" size="mini" @click="showEditDialog(scope.row.attr_id)">编辑</el-button>
                 <el-button type="danger" icon="el-icon-delete" size="mini" @click="removeParams(scope.row.attr_id)">删除</el-button>
 >>>>>>> goods_params
+=======
+                <el-button size="mini" type="primary" icon="el-icon-edit" @click="showEditDialog(scope.row.attr_id)">编辑</el-button>
+                <el-button size="mini" type="danger" icon="el-icon-delete" @click="removeParams(scope.row.attr_id)">删除</el-button>
+>>>>>>> list
               </template>
             </el-table-column>
           </el-table>
@@ -154,10 +180,14 @@
     <!-- 添加参数的对话框 -->
     <el-dialog :title="'添加' + titleText" :visible.sync="addDialogVisible" width="50%" @close="addDialogClosed">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <!-- 添加参数的对话框 -->
 =======
       <!-- 添加参数的表单 -->
 >>>>>>> goods_params
+=======
+      <!-- 添加参数的对话框 -->
+>>>>>>> list
       <el-form :model="addForm" :rules="addFormRules" ref="addFormRef" label-width="100px">
         <el-form-item :label="titleText" prop="attr_name">
           <el-input v-model="addForm.attr_name"></el-input>
@@ -232,9 +262,12 @@ export default {
   created() {
     this.getCateList()
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     console.log(this.manyTableData);
 >>>>>>> goods_params
+=======
+>>>>>>> list
   },
   methods: {
     // 获取所有的商品分类列表
@@ -244,12 +277,18 @@ export default {
         return this.$message.error('获取商品分类失败！')
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
       this.catelist = res.data
 
 =======
       this.catelist = res.data
 >>>>>>> goods_params
+=======
+
+      this.catelist = res.data
+
+>>>>>>> list
       console.log(this.catelist)
     },
     // 级联选择框选中项变化，会触发这个函数
@@ -259,9 +298,13 @@ export default {
     // tab 页签点击事件的处理函数
     handleTabClick() {
 <<<<<<< HEAD
+<<<<<<< HEAD
       console.log(this.activeName)
 =======
 >>>>>>> goods_params
+=======
+      console.log(this.activeName)
+>>>>>>> list
       this.getParamsData()
     },
     // 获取参数的列表数据
@@ -274,12 +317,18 @@ export default {
         return
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
       // 证明选中的是三级分类
       console.log(this.selectedCateKeys)
 =======
       // 证明选中的是三级分类
 >>>>>>> goods_params
+=======
+
+      // 证明选中的是三级分类
+      console.log(this.selectedCateKeys)
+>>>>>>> list
       // 根据所选分类的Id，和当前所处的面板，获取对应的参数
       const { data: res } = await this.$http.get(
           `categories/${this.cateId}/attributes`,
@@ -288,17 +337,23 @@ export default {
           }
       )
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> list
 
       if (res.meta.status !== 200) {
         return this.$message.error('获取参数列表失败！')
       }
 
+<<<<<<< HEAD
 =======
       if (res.meta.status !== 200) {
         return this.$message.error('获取参数列表失败！')
       }
       console.log(res.data);
 >>>>>>> goods_params
+=======
+>>>>>>> list
       res.data.forEach(item => {
         item.attr_vals = item.attr_vals ? item.attr_vals.split(' ') : []
         // 控制文本框的显示与隐藏
@@ -307,10 +362,15 @@ export default {
         item.inputValue = ''
       })
 <<<<<<< HEAD
+<<<<<<< HEAD
 
       console.log(res.data)
 =======
 >>>>>>> goods_params
+=======
+
+      console.log(res.data)
+>>>>>>> list
       if (this.activeName === 'many') {
         this.manyTableData = res.data
       } else {

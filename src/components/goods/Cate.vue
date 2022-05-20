@@ -31,12 +31,17 @@
         <!-- 操作 -->
         <template slot="opt" slot-scope="scope">
 <<<<<<< HEAD
+<<<<<<< HEAD
           <el-button type="primary" icon="el-icon-edit" size="mini">编辑</el-button>
           <el-button type="danger" icon="el-icon-delete" size="mini">删除</el-button>
 =======
           <el-button type="primary" icon="el-icon-edit" size="mini" @click="showEditCatForm(scope.row.cat_id)">编辑</el-button>
           <el-button type="danger" icon="el-icon-delete" size="mini" @click="removeCatById(scope.row.cat_id)">删除</el-button>
 >>>>>>> goods_params
+=======
+          <el-button type="primary" icon="el-icon-edit" size="mini">编辑</el-button>
+          <el-button type="danger" icon="el-icon-delete" size="mini">删除</el-button>
+>>>>>>> list
         </template>
       </tree-table>
 
@@ -65,6 +70,7 @@
       </span>
     </el-dialog>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
     <!-- 修改分类的对话框 -->
@@ -82,6 +88,8 @@
       </span>
     </el-dialog>
 >>>>>>> goods_params
+=======
+>>>>>>> list
   </div>
 </template>
 
@@ -147,10 +155,13 @@ export default {
       // 父级分类的列表
       parentCateList: [],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       editCateForm: {},
       editCateDialogVisible: false,
 >>>>>>> goods_params
+=======
+>>>>>>> list
       // 指定级联选择器的配置对象
       cascaderProps: {
         value: 'cat_id',
@@ -236,6 +247,9 @@ export default {
       this.$refs.addCateFormRef.validate(async valid => {
         if (!valid) return
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> list
         const { data: res } = await this.$http.post(
             'categories',
             this.addCateForm
@@ -245,12 +259,15 @@ export default {
           return this.$message.error('添加分类失败！')
         }
 
+<<<<<<< HEAD
 =======
         const { data: res } = await this.$http.post('categories', this.addCateForm)
         if (res.meta.status !== 201) {
           return this.$message.error('添加分类失败！')
         }
 >>>>>>> goods_params
+=======
+>>>>>>> list
         this.$message.success('添加分类成功！')
         this.getCateList()
         this.addCateDialogVisible = false
@@ -262,6 +279,7 @@ export default {
       this.selectedKeys = []
       this.addCateForm.cat_level = 0
       this.addCateForm.cat_pid = 0
+<<<<<<< HEAD
 <<<<<<< HEAD
     }
 =======
@@ -303,6 +321,9 @@ export default {
     }
 
 >>>>>>> goods_params
+=======
+    }
+>>>>>>> list
   }
 }
 </script>

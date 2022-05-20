@@ -120,7 +120,7 @@ export default {
   border-right: none;
 }
 .el-main {
-  background-color: #FFF;
+  background-color: #EAEDF1;
 }
 .iconfont {
   margin-right: 10px;
