@@ -2,7 +2,7 @@
   <el-container>
     <el-header >
       <div>
-        <img src="@/assets/img/heima.png" alt="">
+        <img src="@/assets/img/avater.png" alt="" id="avatar">
         <span>电商后台管理系统</span>
       </div>
       <el-button type="info" @click="logout">退出</el-button>
@@ -108,6 +108,11 @@ export default {
 .el-header div {
   display: flex;
   align-items: center;
+}
+.el-header div img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
 }
 .el-header div span {
   margin-left: 15px;
